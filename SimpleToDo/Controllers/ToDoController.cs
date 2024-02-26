@@ -27,6 +27,7 @@ namespace SimpleToDo.Controllers
                                 Name = todo.Name,
                                 Status = todo.Status,
                             })
+                            .OrderByDescending(todo => todo.CreateDate)
                             .ToListAsync();
 
             return Ok(toDos);
